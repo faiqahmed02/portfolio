@@ -1,7 +1,6 @@
 import React from "react";
 import {ExperienceItem} from "../types/interfaces";
 import Image from "next/image";
-import { url } from "inspector";
 
 const experiences: ExperienceItem[] = [
   {

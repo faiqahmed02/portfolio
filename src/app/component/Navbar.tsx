@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,12 +42,12 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-8 text-lg font-medium">
           {[
-            { label: "Home", href: "#hero" },
-            { label: "Experience", href: "#experience" },
-            { label: "Projects", href: "#projects" },
-            { label: "Skills", href: "#skills" },
-            { label: "Contact", href: "#contact" },
-          ].map(({ label, href }) => (
+            {label: "Home", href: "#hero"},
+            {label: "Experience", href: "#experience"},
+            {label: "Projects", href: "#projects"},
+            {label: "Skills", href: "#skills"},
+            {label: "Contact", href: "#contact"},
+          ].map(({label, href}) => (
             <li key={href}>
               <a
                 href={href}
@@ -86,32 +86,34 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile menu */}
-      <div
-        id="mobile-menu"
-        className={`lg:hidden bg-[#111827] overflow-hidden transition-max-height duration-300 ${
-          isMenuOpen ? "max-h-96" : "max-h-0"
-        }`}
-      >
-        <ul className="flex flex-col space-y-6 px-6 pb-6 text-lg font-medium">
-          {[
-            { label: "Home", href: "#hero" },
-            { label: "Experience", href: "#experience" },
-            { label: "Projects", href: "#projects" },
-            { label: "Skills", href: "#skills" },
-            { label: "Contact", href: "#contact" },
-          ].map(({ label, href }) => (
-            <li key={href}>
-              <a
-                href={href}
-                className="block text-white hover:text-indigo-500 transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {isMobile && (
+        <div
+          id="mobile-menu"
+          className={`lg:hidden bg-[#111827] overflow-hidden transition-max-height duration-300 ${
+            isMenuOpen ? "max-h-96" : "max-h-0"
+          }`}
+        >
+          <ul className="flex flex-col space-y-6 px-6 pb-6 text-lg font-medium">
+            {[
+              {label: "Home", href: "#hero"},
+              {label: "Experience", href: "#experience"},
+              {label: "Projects", href: "#projects"},
+              {label: "Skills", href: "#skills"},
+              {label: "Contact", href: "#contact"},
+            ].map(({label, href}) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  className="block text-white hover:text-indigo-500 transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
