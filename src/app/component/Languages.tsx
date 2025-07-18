@@ -2,12 +2,12 @@ import React from 'react';
 
 const languages = [
   { name: "English", proficiency: "C1" },
-  { name: "German", proficiency: "A1 (Learning)" },
+  { name: "German", proficiency: "A2 (Learning)" },
 ];
 
 const Languages: React.FC = () => {
   return (
-    <section id="languages" className="py-20 bg-gray-700">
+    <section id="languages" className="py-20 bg-[#111827]">
       <div className="container mx-auto px-6 lg:px-12">
         <h2 className="text-4xl font-extrabold text-center text-white mb-12">
           Languages

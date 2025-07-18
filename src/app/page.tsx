@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Certifications from "./component/Certifications";
 import Contact from "./component/Contact";
 import Education from "./component/Education";
@@ -9,7 +9,7 @@ import Interest from "./component/Interests";
 import Languages from "./component/Languages";
 import Navbar from "./component/Navbar";
 import Projects from "./component/Projects";
-import Ref from "./component/Reference";
+import References from "./component/Reference";
 import Skills from "./component/Skills";
 
 // Inside pages/index.tsx
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
       <Contact />
       <Interest />
       <Languages />
-      <Ref />
+      <References />
       <Footer />
     </>
   );

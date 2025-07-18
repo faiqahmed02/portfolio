@@ -1,144 +1,117 @@
 import React, { useEffect, useState } from "react";
 
 const Navbar: React.FC = () => {
-  // State to manage menu visibility on mobile
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [screenSize, setScreenSize] = useState({
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0,
-  });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleResize = () => {
-        setScreenSize({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-      };
+    // Listener for screen size changes using matchMedia
+    const mediaQuery = window.matchMedia("(max-width: 1023px)"); // Tailwind lg breakpoint = 1024px
 
-      // Add event listener for window resize
-      window.addEventListener("resize", handleResize);
+    const handleMediaChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      setIsMobile(e.matches);
+      if (!e.matches) {
+        setIsMenuOpen(false); // Close menu if switching to desktop
+      }
+    };
 
-      // Cleanup the event listener on component unmount
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    // Initial check
+    handleMediaChange(mediaQuery);
+
+    // Add listener
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    // Cleanup
+    return () => mediaQuery.removeEventListener("change", handleMediaChange);
   }, []);
 
-  // Toggle the menu visibility for mobile
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   return (
-    <nav className="bg-primary text-white p-4 fixed w-full top-0 shadow-lg z-10">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav
+      className="fixed top-0 w-full z-20 bg-[#111827] text-white shadow-md"
+      role="navigation"
+      aria-label="Main Navigation"
+    >
+      <div className="container mx-auto flex items-center justify-between px-6 py-4 lg:px-12">
         {/* Logo */}
-        <h1 className="text-lg font-bold">Faiq Ahmed</h1>
+        <h1 className="text-xl font-bold select-none">Faiq Ahmed</h1>
 
-        {/* Hamburger Menu Icon for Mobile */}
-        <button
-          className="lg:hidden flex flex-col space-y-2"
-          onClick={toggleMenu}
-        >
-          <span className="block w-6 h-1 bg-white"></span>
-          <span className="block w-6 h-1 bg-white"></span>
-          <span className="block w-6 h-1 bg-white"></span>
-        </button>
-
-        {/* Desktop Menu (visible on large screens) */}
-        <ul
-          className={`hidden lg:flex space-x-4 items-center transition-transform duration-300`}
-        >
-          <li>
-            <a href="#hero" className="hover:text-accent transition-colors">
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#experience"
-              className="hover:text-accent transition-colors"
-            >
-              Experience
-            </a>
-          </li>
-          <li>
-            <a
-              href="#projects"
-              className="hover:text-accent transition-colors"
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#skills" className="hover:text-accent transition-colors">
-              Skills
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className="hover:text-accent transition-colors"
-            >
-              Contact
-            </a>
-          </li>
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex space-x-8 text-lg font-medium">
+          {[
+            { label: "Home", href: "#hero" },
+            { label: "Experience", href: "#experience" },
+            { label: "Projects", href: "#projects" },
+            { label: "Skills", href: "#skills" },
+            { label: "Contact", href: "#contact" },
+          ].map(({ label, href }) => (
+            <li key={href}>
+              <a
+                href={href}
+                className="hover:text-indigo-500 transition-colors duration-300"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
+
+        {/* Hamburger button for mobile */}
+        <button
+          aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={toggleMenu}
+          className="lg:hidden flex flex-col space-y-1.5 focus:outline-none"
+        >
+          <span
+            className={`block h-1.5 w-6 bg-white rounded transition-transform duration-300 ${
+              isMenuOpen ? "rotate-45 translate-y-2.5" : ""
+            }`}
+          />
+          <span
+            className={`block h-1.5 w-6 bg-white rounded transition-opacity duration-300 ${
+              isMenuOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`block h-1.5 w-6 bg-white rounded transition-transform duration-300 ${
+              isMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
+            }`}
+          />
+        </button>
       </div>
 
-      {/* Mobile Dropdown Menu (appears when menu is toggled) */}
-      {screenSize.width <= 700 && isMenuOpen && (
-        <div className="lg:hidden bg-primary text-white p-4 mt-4 rounded-md shadow-md">
-          <ul className="space-y-4">
-            <li>
+      {/* Mobile menu */}
+      <div
+        id="mobile-menu"
+        className={`lg:hidden bg-[#111827] overflow-hidden transition-max-height duration-300 ${
+          isMenuOpen ? "max-h-96" : "max-h-0"
+        }`}
+      >
+        <ul className="flex flex-col space-y-6 px-6 pb-6 text-lg font-medium">
+          {[
+            { label: "Home", href: "#hero" },
+            { label: "Experience", href: "#experience" },
+            { label: "Projects", href: "#projects" },
+            { label: "Skills", href: "#skills" },
+            { label: "Contact", href: "#contact" },
+          ].map(({ label, href }) => (
+            <li key={href}>
               <a
-                href="#hero"
-                className="block hover:text-accent transition-colors"
-                onClick={toggleMenu}
+                href={href}
+                className="block text-white hover:text-indigo-500 transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                {label}
               </a>
             </li>
-            <li>
-              <a
-                href="#experience"
-                className="block hover:text-accent transition-colors"
-                onClick={toggleMenu}
-              >
-                Experience
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                className="block hover:text-accent transition-colors"
-                onClick={toggleMenu}
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#skills"
-                className="block hover:text-accent transition-colors"
-                onClick={toggleMenu}
-              >
-                Skills
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="block hover:text-accent transition-colors"
-                onClick={toggleMenu}
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
