@@ -1,5 +1,7 @@
 import React from "react";
-import { ExperienceItem } from "../types/interfaces";
+import {ExperienceItem} from "../types/interfaces";
+import Image from "next/image";
+import { url } from "inspector";
 
 const experiences: ExperienceItem[] = [
   {
@@ -115,7 +117,14 @@ const experiences: ExperienceItem[] = [
       "Developed responsive front-end code using HTML5 and CSS3.",
       "Collaborated with designers to maintain UI consistency across projects.",
     ],
-    skills: ["HTML5", "CSS3", "UI Collaboration", "Responsive Design", "Web Development", "WordPress"],
+    skills: [
+      "HTML5",
+      "CSS3",
+      "UI Collaboration",
+      "Responsive Design",
+      "Web Development",
+      "WordPress",
+    ],
     logo: "https://mountpixels.com/wp-content/uploads/2024/06/Asset-3-300x58-1.png",
   },
 ];
@@ -135,7 +144,9 @@ const Experience: React.FC = () => {
             {/* Logo & Company Info */}
             {exp.logo && (
               <div className="flex items-center mb-4">
-                <img
+                <Image
+                  width={64}
+                  height={64}
                   src={exp.logo}
                   alt={`${exp.company} logo`}
                   className="w-16 h-16 object-contain mr-4"

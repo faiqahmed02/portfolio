@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Hero: React.FC = () => {
@@ -5,7 +6,9 @@ const Hero: React.FC = () => {
     <section id="hero" className="bg-gray-900 text-white py-20">
       <div className="container mx-auto flex flex-col items-center justify-center text-center px-4">
         {/* Profile Image */}
-        <img
+        <Image
+          width={128}
+          height={128}
           src="/images/faiq.jpg" // replace with your actual image path
           alt="Faiq Ahmed"
           className="w-32 h-32 rounded-full shadow-lg mb-6 object-cover border-4 border-white"
