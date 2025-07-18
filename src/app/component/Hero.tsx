@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 const Hero: React.FC = () => {
   return (
@@ -16,17 +16,23 @@ const Hero: React.FC = () => {
 
         {/* Name and Title */}
         <h1 className="text-4xl md:text-5xl font-extrabold">Faiq Ahmed</h1>
-        <p className="text-lg md:text-xl text-gray-300 mt-3">
+        <p className="text-lg md:text-xl text-gray-300 mt-3 max-w-xl">
           Full-Stack Software Engineer | React | Next.js | TypeScript | Node.js | Firebase
         </p>
 
-        {/* CTA Button */}
-        <div className="mt-6">
+        {/* CTA Buttons */}
+        <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <a
             href="mailto:faiqahmed73@hotmail.com"
             className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition duration-300"
           >
             Contact Me
+          </a>
+          <a
+            href="tel:+4915755290948"
+            className="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-lg transition duration-300"
+          >
+            Call Me
           </a>
         </div>
       </div>
