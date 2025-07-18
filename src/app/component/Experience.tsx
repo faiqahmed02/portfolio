@@ -27,7 +27,7 @@ const experiences: ExperienceItem[] = [
     role: "Software Engineer",
     company: "TA Solutions",
     duration: "Aug 2024 - Dec 2024 · 5 months",
-    type: "Onn-site",
+    type: "On-site",
     location: "Karāchi, Sindh, Pakistan",
     responsibilities: [
       "Created responsive UIs using React and integrated Firebase for secure user authentication.",
