@@ -2,13 +2,13 @@ import React from 'react';
 
 const Education: React.FC = () => {
   return (
-    <section id="education" className="py-20 bg-[white]">
+    <section id="education" className="py-20">
       <div className="container mx-auto px-6 lg:px-12">
         <h2 className="text-4xl font-extrabold text-center text-black mb-12">
           Education
         </h2>
 
-        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 max-w-2xl mx-auto transition-transform transform hover:scale-105 hover:shadow-xl">
+        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 max-w-2xl mx-auto transition-transform transform hover:scale-105 hover:shadow-xl bg-[url(/images/education/ilmaunilogo.jpg)] bg-no-repeat bg-contain bg-right-top">
           <div className="mb-3">
             <h3 className="text-2xl font-bold text-blue-700">
               ILMA University, Karachi
@@ -18,7 +18,7 @@ const Education: React.FC = () => {
             </p>
             <p className="text-sm text-gray-600 mt-1">2016 – 2020</p>
           </div>
-          <div className="mt-4 text-gray-700 text-sm leading-relaxed">
+          <div className="mt-4 text-gray-700 text-sm leading-relaxed w-[50%]">
             <p>
               Completed a comprehensive 4-year undergraduate program covering core software
               engineering disciplines including programming, databases, algorithms, web technologies,
