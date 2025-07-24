@@ -22,7 +22,7 @@ const Languages: React.FC = () => {
                 {lang.name}
               </h3>
               <p className="text-lg text-gray-600">
-                Proficiency: <span className="text-accent">{lang.proficiency}</span>
+                Proficiency: <span className="text-blue-500">{lang.proficiency}</span>
               </p>
             </div>
           ))}
