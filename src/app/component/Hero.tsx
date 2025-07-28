@@ -23,10 +23,17 @@ const Hero: React.FC = () => {
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <a
-            href="mailto:faiqahmed73@hotmail.com"
+            href="mailto:faiqahmedabbasi1@gmail.com"
             className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition duration-300"
           >
-            Contact Me
+            Email Me
+          </a>
+          <a
+          download={true}
+            href="/pdf/resume.pdf"
+            className="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-lg transition duration-300"
+          >
+            Download Resume
           </a>
           <a
             href="tel:+4915755290948"
@@ -34,6 +41,7 @@ const Hero: React.FC = () => {
           >
             Call Me
           </a>
+  
         </div>
       </div>
     </section>
