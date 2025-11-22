@@ -5,31 +5,31 @@ import { ExternalLink, Github } from "lucide-react"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "OriJin — Full-Stack Web Application",
     description:
-      "A full-featured online shopping platform with real-time inventory management, payment processing, and admin dashboard. Built with Next.js and Stripe integration.",
-    image: "/modern-ecommerce-dashboard.png",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+      "A scalable full-stack web app built with Next.js, PostgreSQL, Prisma ORM, and Firebase Auth. Optimized API calls reducing response time by 40% and enhancing overall system performance.",
+    image: "/orijin.webp",
+    technologies: ["Next.js", "PostgreSQL", "Prisma", "Firebase Auth", "TypeScript"],
+    liveUrl: "https://orijin.io/",
+    githubUrl: "#",
   },
   {
-    title: "Task Management App",
+    title: "BuiltList — AI-Powered Response Generator",
     description:
-      "Collaborative project management tool with real-time updates, drag-and-drop interface, and team collaboration features. Inspired by modern productivity tools.",
-    image: "/task-management-board-kanban.jpg",
-    technologies: ["React", "Firebase", "Node.js", "Material-UI"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+      "Integrated Google Gemini AI to generate dynamic auto-responses for user interactions. Improved REST API data retrieval and optimized workflow efficiency.",
+    image: "/builtList.webp",
+    technologies: ["Google Gemini AI", "Next.js", "Node.js", "REST APIs", "TypeScript"],
+    liveUrl: "https://www.builtlist.io/",
+    githubUrl: "#",
   },
   {
-    title: "Analytics Dashboard",
+    title: "FX1 — Web 3.0 Platform (3D Interactive UI)",
     description:
-      "Real-time analytics dashboard for business metrics visualization. Features interactive charts, data filtering, and export capabilities.",
-    image: "/analytics-dashboard.png",
-    technologies: ["Next.js", "D3.js", "Express", "MongoDB"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+      "Revamped UI/UX for a Web 3.0 React-based 3D model viewer, implemented Redux for better state management, and enhanced interaction smoothness.",
+    image: "/FX1.png",
+    technologies: ["React", "Redux", "Three.js", "JavaScript", "Web 3.0"],
+    liveUrl: "https://fx1.io/",
+    githubUrl: "#",
   },
 ]
 

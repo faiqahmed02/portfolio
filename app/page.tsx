@@ -5,6 +5,7 @@ import { Skills } from "@/components/skills"
 import { Contact } from "@/components/contact"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { Certifications } from "@/components/certification"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Skills />
+        <Certifications />
         <Contact />
       </main>
       <Footer />
