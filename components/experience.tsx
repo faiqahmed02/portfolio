@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge"
 
 const experiences = [
   {
-    period: "2025 — Present",
+    period: "Apr. 2025- Sep. 2025",
     title: "Full-Stack Developer",
     company: "za:media GmbH",
     description:
@@ -11,7 +11,7 @@ const experiences = [
     technologies: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"],
   },
   {
-    period: "2024 — 2024",
+    period: "Aug. 2024 - Dec. 2024",
     title: "Software Engineer",
     company: "TA Solutions",
     description:
@@ -19,7 +19,7 @@ const experiences = [
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Cloud Functions"],
   },
   {
-    period: "2023 — 2024",
+    period: "Mar. 2023 - Aug. 2024",
     title: "Full-Stack Developer",
     company: "Creative Code Solution",
     description:
@@ -27,7 +27,7 @@ const experiences = [
     technologies: ["React", "Next.js", "React Native", "TypeScript", "CI/CD"],
   },
   {
-    period: "2021 — 2023",
+    period: "Apr. 2021 - Feb. 2023",
     title: "Full-Stack Developer",
     company: "Madcom Digital",
     description:
