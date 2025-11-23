@@ -55,7 +55,7 @@ export function Hero() {
             >
               <Mail className="h-6 w-6" />
             </a>
-            <a
+            {/* <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -63,7 +63,7 @@ export function Hero() {
               aria-label="Resume"
             >
               <FileText className="h-6 w-6" />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
