@@ -1,3 +1,5 @@
+import { Heart } from "lucide-react"
+
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -6,7 +8,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Faiq Ahmed. Built with Next.js and Tailwind CSS.
+            © {currentYear} Faiq Ahmed. Built with Love <Heart className="inline" size={16} /> .
           </p>
           <div className="flex gap-6">
             <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
